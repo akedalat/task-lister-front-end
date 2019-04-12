@@ -7,6 +7,7 @@ class NoteContainer extends Component {
 
   state = {
     notes: [{}],
+    note: {}
   }
 
   //get Notes
@@ -19,13 +20,20 @@ class NoteContainer extends Component {
     )
   }
 
+  selectedNote = (note) => {
+    this.setState({
+      note: note
+    })
+  }
+
   render() {
+    console.log(this.state.note)
     return (
       <Fragment>
         <Search />
         <div className='container'>
-          <Sidebar notes={this.state.notes}/>
-          <Content />
+          <Sidebar notes={this.state.notes} selectedNote={this.selectedNote}/>
+          <Content note={this.state.note}/>
         </div>
       </Fragment>
     );
