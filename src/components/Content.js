@@ -5,23 +5,15 @@ import Instructions from './Instructions';
 
 class Content extends Component {
 
-  state = {
-    edit: false
-  }
-
-  editOrCancelBtnClicked = () => {
-    this.state.edit ? this.setState({edit: false}) : this.setState({edit: true})
-  }
-
   renderContent = () => {
-    if (this.state.edit) {
+    if (this.props.edit) {
       return <NoteEditor 
       note={this.props.note}
-      editOrCancelBtnClicked={this.editOrCancelBtnClicked}
+      cancelEdit={this.props.cancelEdit}
       updateNote={this.props.updateNote}
       />;
     } else if (Object.keys(this.props.note).length > 0) {
-      return <NoteViewer editOrCancelBtnClicked={this.editOrCancelBtnClicked} note={this.props.note}/>;
+      return <NoteViewer cancelEdit={this.props.cancelEdit} note={this.props.note}/>;
     } else {
       return <Instructions />;
     }

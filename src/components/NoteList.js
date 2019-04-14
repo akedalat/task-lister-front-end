@@ -4,7 +4,12 @@ import NoteItem from './NoteItem';
 const NoteList = (props) => {
   const renderNotes = () => {
     return props.notes.slice(1).map(note => {
-      return (<NoteItem key={note.id} note={note} selectedNote={props.selectedNote}/>)
+      return (<NoteItem 
+        key={note.id} 
+        note={note} 
+        selectedNote={props.selectedNote}
+        cancelEdit={props.cancelEdit}
+        edit={props.edit}/>)
     })
   }
   return (

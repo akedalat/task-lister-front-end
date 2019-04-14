@@ -25,11 +25,12 @@ class NoteEditor extends Component {
   }
 
   handleCancel = () => {
-    this.props.editOrCancelBtnClicked()
+    this.props.cancelEdit()
   }
 
   render() {
-    console.log(this.props)
+    console.log(this.state.title)
+    console.log(this.props.note.title)
     return (
       <form  onSubmit={this.handleSubmit} className="note-editor">
         <input onChange={this.handleChange} value={this.state.title} type="text" name="title"/>

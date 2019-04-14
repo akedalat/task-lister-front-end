@@ -10,7 +10,8 @@ class NoteContainer extends Component {
 
   state = {
     notes: [{}],
-    note: {}
+    note: {},
+    edit: false
   }
 
   // Get Notes
@@ -35,6 +36,10 @@ class NoteContainer extends Component {
     }).then((res => res.json()))
   }
 
+  cancelEdit = () => {
+    this.state.edit ? this.setState({edit: false}) : this.setState({edit: true})
+  }
+
   selectedNote = (note) => {
     this.setState({
       note: note
@@ -46,8 +51,17 @@ class NoteContainer extends Component {
       <Fragment>
         <Search />
         <div className='container'>
-          <Sidebar notes={this.state.notes} selectedNote={this.selectedNote}/>
-          <Content note={this.state.note} updateNote={this.updateNote}/>
+          <Sidebar 
+          notes={this.state.notes} 
+          selectedNote={this.selectedNote}
+          cancelEdit={this.cancelEdit}
+          edit={this.state.edit} />
+          
+          <Content 
+          note={this.state.note} 
+          updateNote={this.updateNote}
+          cancelEdit={this.cancelEdit}
+          edit={this.state.edit} />
         </div>
       </Fragment>
     );

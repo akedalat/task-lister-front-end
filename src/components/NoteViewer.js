@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 const NoteViewer = (props) => {
 
   const handleClick= () => {
-    props.editOrCancelBtnClicked()
+    props.cancelEdit()
   }
 
   return (
