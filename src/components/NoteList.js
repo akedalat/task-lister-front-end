@@ -3,7 +3,7 @@ import NoteItem from './NoteItem';
 
 const NoteList = (props) => {
   const renderNotes = () => {
-    return props.notes.slice(1).map(note => {
+    return props.notes.map(note => {
       return (<NoteItem 
         key={note.id} 
         note={note} 
@@ -12,12 +12,12 @@ const NoteList = (props) => {
         edit={props.edit}/>)
     })
   }
-  return (
-    
+  return (  
     <ul>
       {renderNotes()}
     </ul>
   );
+  
 }
 
 export default NoteList;

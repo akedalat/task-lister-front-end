@@ -14,8 +14,7 @@ class NoteContainer extends Component {
     edit: false
   }
 
-  // Get Notes
-  componentDidMount = () => {
+  fetchNotes = () => {
     fetch(baseUrl)
     .then(resp => resp.json())
     .then(notes => this.setState({
@@ -23,17 +22,23 @@ class NoteContainer extends Component {
       })
     )
   }
+  
+  // Get Notes
+  componentDidMount = () => {
+    this.fetchNotes()
+  }
 
   // Update Note
-  updateNote = (note) => {
-    fetch(baseUrl + `/${note.id}`, {
+  updateNote = (note, note_id) => {
+    fetch(baseUrl + `/${note_id}`, {
       method: "PATCH",
       body: JSON.stringify(note),
       headers:{
+        'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
       }
     }).then((res => res.json()))
+    .then(res => this.fetchNotes())
   }
 
   cancelEdit = () => {

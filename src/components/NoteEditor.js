@@ -14,14 +14,13 @@ class NoteEditor extends Component {
   }
 
   handleSubmit = (e) => {
-    //e.preventDefault()
+    e.preventDefault()
     const updatedNote = {
-      id: this.props.note.id,
       title: this.state.title,
       body: this.state.body,
       user_id: 2
     }
-    this.props.updateNote(updatedNote)
+    this.props.updateNote(updatedNote, this.props.note.id)
   }
 
   handleCancel = () => {
@@ -29,8 +28,6 @@ class NoteEditor extends Component {
   }
 
   render() {
-    console.log(this.state.title)
-    console.log(this.props.note.title)
     return (
       <form  onSubmit={this.handleSubmit} className="note-editor">
         <input onChange={this.handleChange} value={this.state.title} type="text" name="title"/>
