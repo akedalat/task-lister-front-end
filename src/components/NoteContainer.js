@@ -14,6 +14,7 @@ class NoteContainer extends Component {
     edit: false
   }
 
+  //To Rerender Notes when updateNote or createNote are invoked
   fetchNotes = () => {
     fetch(baseUrl)
     .then(resp => resp.json())
@@ -41,6 +42,19 @@ class NoteContainer extends Component {
     .then(this.fetchNotes)
   }
 
+  //Create Note
+  createNote = (note) => {
+    fetch(baseUrl, {
+      method: "POST",
+      body: JSON.stringify(note),
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    }).then((res => res.json()))
+    .then(this.fetchNotes)
+  }
+
   cancelEdit = () => {
     this.state.edit ? this.setState({edit: false}) : this.setState({edit: true})
   }
@@ -52,6 +66,7 @@ class NoteContainer extends Component {
   }
 
   render() {
+    console.log(this.state.notes)
     return (
       <Fragment>
         <Search />
@@ -60,7 +75,8 @@ class NoteContainer extends Component {
           notes={this.state.notes} 
           selectedNote={this.selectedNote}
           cancelEdit={this.cancelEdit}
-          edit={this.state.edit} />
+          edit={this.state.edit}
+          createNote={this.createNote} />
           
           <Content 
           note={this.state.note} 
