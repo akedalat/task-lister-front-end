@@ -72,8 +72,8 @@ class NoteContainer extends Component {
     })
   }
 
-  render() {
-    return (
+  render() {  
+    return (   
       <Fragment>
         <Search searchTerm={this.searchTerm}/>
         <div className='container'>

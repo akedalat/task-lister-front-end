@@ -12,7 +12,7 @@ const Search = (props) => {
         onChange={handleChange}
         id="search-bar"
         type="text"
-        placeholder="Search Notes by Title"
+        placeholder="Search Notes"
       />
     </div>
   );
