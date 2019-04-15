@@ -9,7 +9,7 @@ const baseUrl = "http://localhost:3000/api/v1/notes"
 class NoteContainer extends Component {
 
   state = {
-    notes: [{}],
+    notes: [],
     note: {},
     edit: false,
     searchTerm: ""
@@ -66,17 +66,24 @@ class NoteContainer extends Component {
     })
   }
 
+  searchTerm = (searchTerm) => {
+    this.setState({
+      searchTerm: searchTerm
+    })
+  }
+
   render() {
     return (
       <Fragment>
-        <Search searchTerm={this.state.searchTerm}/>
+        <Search searchTerm={this.searchTerm}/>
         <div className='container'>
           <Sidebar 
           notes={this.state.notes} 
           selectedNote={this.selectedNote}
           cancelEdit={this.cancelEdit}
           edit={this.state.edit}
-          createNote={this.createNote} />
+          createNote={this.createNote}
+          searchTerm={this.state.searchTerm} />
           
           <Content 
           note={this.state.note} 

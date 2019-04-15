@@ -19,7 +19,8 @@ class Sidebar extends Component {
         notes={this.props.notes} 
         selectedNote={this.props.selectedNote}
         cancelEdit={this.props.cancelEdit}
-        edit={this.props.edit}/>
+        edit={this.props.edit}
+        searchTerm={this.props.searchTerm}/>
         <button onClick={this.handleClick}>New</button>
       </div>
     );
