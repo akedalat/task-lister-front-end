@@ -11,7 +11,8 @@ class NoteContainer extends Component {
   state = {
     notes: [{}],
     note: {},
-    edit: false
+    edit: false,
+    searchTerm: ""
   }
 
   //To Rerender Notes when updateNote or createNote are invoked
@@ -66,10 +67,9 @@ class NoteContainer extends Component {
   }
 
   render() {
-    console.log(this.state.notes)
     return (
       <Fragment>
-        <Search />
+        <Search searchTerm={this.state.searchTerm}/>
         <div className='container'>
           <Sidebar 
           notes={this.state.notes} 
