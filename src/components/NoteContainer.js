@@ -38,7 +38,7 @@ class NoteContainer extends Component {
         'Content-Type': 'application/json',
       }
     }).then((res => res.json()))
-    .then(res => this.fetchNotes())
+    .then(this.fetchNotes)
   }
 
   cancelEdit = () => {
