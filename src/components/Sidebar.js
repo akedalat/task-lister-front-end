@@ -22,10 +22,6 @@ class Sidebar extends Component {
     this.props.createNote(createdNote)
   }
 
-  // setSort= () => {
-  //   console.log(this.notes)
-  // }  
-
   render(){
     if (this.state.sort === "alphabetical"){
       this.props.notes.sort((a,b)=> {
@@ -49,10 +45,9 @@ class Sidebar extends Component {
             })
           }
 
-    console.log(this.props.notes)
     return (
       <div className='master-detail-element sidebar'>
-      sort tasks
+    sort tasks
       <select onChange={this.handleChange} className="sort">
         <option value="created">Date Created</option>
         <option value="updated">Date Updated</option>

@@ -14,7 +14,7 @@ class NoteEditor extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    //e.preventDefault()
     const updatedNote = {
       title: this.state.title,
       body: this.state.body,

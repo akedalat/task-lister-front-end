@@ -5,6 +5,7 @@ const NoteViewer = (props) => {
   const handleClick= () => {
     props.cancelEdit()
   }
+  console.log(props.note.title)
   return (
     <Fragment>
       <h2>{props.note.title}</h2>

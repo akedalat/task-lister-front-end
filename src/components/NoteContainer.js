@@ -39,7 +39,7 @@ class NoteContainer extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       }
-    }).then((res => res.json()))
+    }).then(res => res.json())
     .then(this.fetchNotes)
   }
 
