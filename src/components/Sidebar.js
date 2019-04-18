@@ -21,11 +21,7 @@ class Sidebar extends Component {
       user_id: 1
     }
     this.props.createNote(createdNote)
-<<<<<<< HEAD
-  }
-=======
   } 
->>>>>>> router
 
   render(){
     if (this.state.sort === "alphabetical"){
@@ -52,12 +48,8 @@ class Sidebar extends Component {
 
     return (
       <div className='master-detail-element sidebar'>
-<<<<<<< HEAD
-    sort tasks
-=======
       sort tasks
       <div className="custom-select">
->>>>>>> router
       <select onChange={this.handleChange} className="sort">
         <option value="created">Date Created</option>
         <option value="updated">Date Updated</option>
