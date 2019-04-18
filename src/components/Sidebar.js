@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteList from './NoteList';
+import { Dropdown } from 'semantic-ui-react'
 
 class Sidebar extends Component {
 
@@ -17,14 +18,10 @@ class Sidebar extends Component {
     const createdNote = {
       title: "Your Task Title",
       body: "Description",
-      user_id: 2
+      user_id: 1
     }
     this.props.createNote(createdNote)
-  }
-
-  // setSort= () => {
-  //   console.log(this.notes)
-  // }  
+  } 
 
   render(){
     if (this.state.sort === "alphabetical"){
@@ -49,22 +46,24 @@ class Sidebar extends Component {
             })
           }
 
-    console.log(this.props.notes)
     return (
       <div className='master-detail-element sidebar'>
       sort tasks
+      <div className="custom-select">
       <select onChange={this.handleChange} className="sort">
         <option value="created">Date Created</option>
         <option value="updated">Date Updated</option>
         <option value="alphabetical">Alphabetical</option>
       </select>
+      </div>
         <NoteList 
         notes={this.props.notes} 
         selectedNote={this.props.selectedNote}
         cancelEdit={this.props.cancelEdit}
         edit={this.props.edit}
         searchTerm={this.props.searchTerm}
-        sort={this.handleSort}/>
+        sort={this.handleSort}
+        deleteNote={this.props.deleteNote}/>
 
         <button onClick={this.handleClick}>New</button>
       </div>

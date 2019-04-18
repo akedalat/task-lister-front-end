@@ -56,6 +56,15 @@ class NoteContainer extends Component {
     .then(this.fetchNotes)
   }
 
+    //Delete Note
+    deleteNote = (id) => {
+      fetch(baseUrl + '/' + id, {
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(this.fetchNotes)
+      }
+
   cancelEdit = () => {
     this.state.edit ? this.setState({edit: false}) : this.setState({edit: true})
   }
@@ -83,7 +92,8 @@ class NoteContainer extends Component {
           cancelEdit={this.cancelEdit}
           edit={this.state.edit}
           createNote={this.createNote}
-          searchTerm={this.state.searchTerm} />
+          searchTerm={this.state.searchTerm} 
+          deleteNote={this.deleteNote}/>
           
           <Content 
           note={this.state.note} 

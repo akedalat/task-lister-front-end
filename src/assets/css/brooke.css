@@ -45,8 +45,7 @@ p.instructions {
   width: 100%;
   background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
   background-repeat: no-repeat;
-  /*font-family: 'IBM Plex Mono';*/
-  font-size: 16px;
+  font-size: 50px;
   letter-spacing: 1.5px;
   font-weight: bolder;
   display: flex;
@@ -57,9 +56,12 @@ p.instructions {
 }
 
 .nav-item {
+  
+  padding: 10px; 
+  background-color: #F27121;
   list-style: none;
   color: white;
-  padding: 4px;
+  
 }
 
 .filter {
@@ -96,18 +98,19 @@ div.sidebar ul {
 
 div.sidebar ul li {
   list-style: none;
-  border-bottom: 1px solid grey;
   padding: 0 5px;
+  margin-bottom: 25px;
 }
 
-div.sidebar ul li:first-child {
+/* div.sidebar ul li:first-child {
   border-top: 1px solid grey;
-}
+} */
 
 div.sidebar ul li:hover {
   /* background-color: yellow; */
-  background-image: linear-gradient(#E6E6E6, #F7F7F7);
+  background-image: linear-gradient(rgb(64, 127, 199), #F7F7F7);
   background-repeat: no-repeat;
+  border-radius: 10px;
 }
 
 
@@ -131,7 +134,7 @@ div.sidebar ul li:hover {
   float:left;
   margin: 10px 0px;
   padding: 20px;
-  border: 2px dashed grey;
+  border: 2px dashed rgb(93, 10, 126);
 }
 
 .sidebar {
@@ -189,3 +192,26 @@ button:focus, input[type="submit"]:focus {
 .loading{
   height: 100px;
 }
+
+#title {
+  font-size:50px;
+}
+
+#button-log {
+  margin-left: 60%;
+}
+
+.dropdown{
+  padding: 15px;
+  background-color: blueviolet
+}
+
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+
+
