@@ -11,7 +11,9 @@ const NoteList = (props) => {
         note={note} 
         selectedNote={props.selectedNote}
         cancelEdit={props.cancelEdit}
-        edit={props.edit}/>)
+        edit={props.edit}
+        deleteNote={props.deleteNote}/>)
+        
       }
     })
   }
