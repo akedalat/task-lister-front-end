@@ -37,9 +37,9 @@ class App extends Component {
     }
   }
 
-    setCurrentUser = (user) => {
+    setCurrentUser = (resp) => {
       this.setState({
-        currentUser: user
+        currentUser: resp
       },() => {
           localStorage.setItem("user_id", this.state.currentUser.id)
           this.props.history.push("/")})
