@@ -3,7 +3,8 @@ import Search from './Search';
 import Sidebar from './Sidebar';
 import Content from './Content';
 
-const baseUrl = "http://localhost:3000/api/v1/notes"
+const notesUrl = "http://localhost:3000/api/v1/notes"
+const usersUrl = "http://localhost:3000/api/v1/users"
 
 
 class NoteContainer extends Component {
@@ -17,10 +18,10 @@ class NoteContainer extends Component {
 
   //To Rerender Notes when updateNote or createNote are invoked
   fetchNotes = () => {
-    fetch(baseUrl)
+    fetch(usersUrl)
     .then(resp => resp.json())
-    .then(notes => this.setState({
-        notes: notes
+    .then(data => this.setState({
+        notes: data.find(user => {return user.id === 5}).notes
       })
     )
   }
@@ -32,7 +33,7 @@ class NoteContainer extends Component {
 
   // Update Note
   updateNote = (note, note_id) => {
-    fetch(baseUrl + `/${note_id}`, {
+    fetch(notesUrl + `/${note_id}`, {
       method: "PATCH",
       body: JSON.stringify(note),
       headers:{
@@ -45,7 +46,7 @@ class NoteContainer extends Component {
 
   //Create Note
   createNote = (note) => {
-    fetch(baseUrl, {
+    fetch(notesUrl, {
       method: "POST",
       body: JSON.stringify(note),
       headers:{
@@ -58,7 +59,7 @@ class NoteContainer extends Component {
 
     //Delete Note
     deleteNote = (id) => {
-      fetch(baseUrl + '/' + id, {
+      fetch(notesUrl + '/' + id, {
         method: 'DELETE'
       })
       .then(response => response.json())
@@ -82,6 +83,7 @@ class NoteContainer extends Component {
   }
 
   render() {  
+    console.log(this.props.currentUser)
     return (   
       <Fragment>
         <Search searchTerm={this.searchTerm}/>

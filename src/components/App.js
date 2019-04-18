@@ -52,7 +52,7 @@ class App extends Component {
         <Switch>
         <Route path='/login' render={(routerProps) => <LoginForm {...routerProps} setCurrentUser={this.setCurrentUser} />} />
         <Route path='/signup' render={(routerProps) => <SignupForm {...routerProps} setCurrentUser={this.setCurrentUser} />} />
-        <Route path='/' render={(routerProps) => <NoteContainer {...routerProps}/>} />
+        <Route path='/' render={(routerProps) => <NoteContainer currentUser={this.state.currentUser} {...routerProps}/>} />
         </Switch>
       </div>
     );
