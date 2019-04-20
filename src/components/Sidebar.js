@@ -30,8 +30,6 @@ class Sidebar extends Component {
   }
 
   render(){
-    console.log(this.props)
-    console.log(this.state)
     if (this.state.sort === "alphabetical"){
       this.props.notes.sort((a,b)=> {
         if (a.title.toLowerCase() < b.title.toLowerCase()){return -1}
