@@ -23,20 +23,21 @@ body {
 p.instructions {
 	/*font-family: monospace;*/
 	font-size: 32px;
-	text-align: center;
+  text-align: center;
+  color: #F27121
 }
 
 .note-editor input[name="title"] {
   font-size: 24px;
   font-weight: 700;
-  border: 1px dashed grey;
+  border: 1px grey;
   margin: 0.5em 0;
   box-sizing: border-box;
 }
 
 .note-editor textarea {
   font-size: 1em;
-  border: 1px dashed grey;
+  border: 1px grey;
   box-sizing: border-box;
   resize: none;
 }
@@ -69,7 +70,7 @@ p.instructions {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px dashed grey;
+  border: 2px rgb(72, 88, 133);
 }
 
 input {
@@ -108,7 +109,7 @@ div.sidebar ul li {
 
 div.sidebar ul li:hover {
   /* background-color: yellow; */
-  background-image: linear-gradient(rgb(64, 127, 199), #F7F7F7);
+  background-color: rgb(255, 241, 191);
   background-repeat: no-repeat;
   border-radius: 10px;
 }
@@ -134,7 +135,7 @@ div.sidebar ul li:hover {
   float:left;
   margin: 10px 0px;
   padding: 20px;
-  border: 2px dashed rgb(93, 10, 126);
+  border: 2px rgb(93, 10, 126);
 }
 
 .sidebar {
@@ -202,8 +203,7 @@ button:focus, input[type="submit"]:focus {
 }
 
 .dropdown{
-  padding: 15px;
-  background-color: blueviolet
+  padding: 15px 0px 25px 0px
 }
 
 
@@ -212,6 +212,21 @@ button:focus, input[type="submit"]:focus {
   position: relative;
   font-family: Arial;
 }
+
+#search-bar {
+  border: 2px;
+  background-color: gainsboro;
+  border-radius: 10px;
+}
+
+.ui.basic.red.button, .ui.basic.red.buttons .button {
+  -webkit-box-shadow: 0 0 0 1px #db2828 inset!important;
+  box-shadow: 0 0 0 1px #db2828 inset!important;
+  color: #db2828!important;
+  width: 80px !important;
+}
+
+
 
 
 

@@ -11,6 +11,7 @@ class Content extends Component {
       note={this.props.note}
       cancelEdit={this.props.cancelEdit}
       updateNote={this.props.updateNote}
+      currentUser={this.props.currentUser}
       />;
     } else if (Object.keys(this.props.note).length > 0) {
       return <NoteViewer cancelEdit={this.props.cancelEdit} note={this.props.note}/>;

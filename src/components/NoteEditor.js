@@ -18,7 +18,7 @@ class NoteEditor extends Component {
     const updatedNote = {
       title: this.state.title,
       body: this.state.body,
-      user_id: 1
+      user_id: this.props.currentUser.id
     }
     this.props.updateNote(updatedNote, this.props.note.id)
   }

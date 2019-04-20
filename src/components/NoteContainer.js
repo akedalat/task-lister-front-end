@@ -21,7 +21,7 @@ class NoteContainer extends Component {
     fetch(usersUrl)
     .then(resp => resp.json())
     .then(data => this.setState({
-        notes: data.find(user => {return user.id === 5}).notes
+        notes: data.find(user => {return user.id === this.props.currentUser.id}).notes
       })
     )
   }
@@ -83,12 +83,12 @@ class NoteContainer extends Component {
   }
 
   render() {  
-    console.log(this.props.currentUser)
     return (   
       <Fragment>
         <Search searchTerm={this.searchTerm}/>
         <div className='container'>
           <Sidebar 
+          currentUser={this.props.currentUser}
           notes={this.state.notes} 
           selectedNote={this.selectedNote}
           cancelEdit={this.cancelEdit}
@@ -98,6 +98,7 @@ class NoteContainer extends Component {
           deleteNote={this.deleteNote}/>
           
           <Content 
+          currentUser={this.props.currentUser}
           note={this.state.note} 
           updateNote={this.updateNote}
           cancelEdit={this.cancelEdit}

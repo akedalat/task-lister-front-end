@@ -49,11 +49,17 @@ class App extends Component {
     return (
       <div className="app">
         <Header logOut={this.logOut} currentUser={this.state.currentUser} />
+        {this.state.currentUser ?  
         <Switch>
         <Route path='/login' render={(routerProps) => <LoginForm {...routerProps} setCurrentUser={this.setCurrentUser} />} />
         <Route path='/signup' render={(routerProps) => <SignupForm {...routerProps} setCurrentUser={this.setCurrentUser} />} />
         <Route path='/' render={(routerProps) => <NoteContainer currentUser={this.state.currentUser} {...routerProps}/>} />
         </Switch>
+        : 
+        <Switch>
+        <Route path='/login' render={(routerProps) => <LoginForm {...routerProps} setCurrentUser={this.setCurrentUser} />} />
+        <Route path='/signup' render={(routerProps) => <SignupForm {...routerProps} setCurrentUser={this.setCurrentUser} />} />
+        </Switch>}
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NoteList from './NoteList';
-import { Dropdown } from 'semantic-ui-react'
+import {Menu, Dropdown } from 'semantic-ui-react'
 
 class Sidebar extends Component {
 
@@ -8,22 +8,30 @@ class Sidebar extends Component {
       sort: ""
     }
 
-  handleChange = (e) => {
-    this.setState({
-      sort: e.target.value
-    })
-  }
-
   handleClick = () => {
     const createdNote = {
       title: "Your Task Title",
       body: "Description",
-      user_id: 1
+      user_id: this.props.currentUser.id
     }
     this.props.createNote(createdNote)
   } 
+  
+  options = [
+    { key: 1, text: 'Alphabetical', value: "alphabetical" },
+    { key: 2, text: 'Date Created', value: "created" },
+    { key: 3, text: 'Date Updated', value: "updated" },
+  ]
+
+  handleDropDown = (a,b) => {
+    this.setState({
+      sort: b.value
+    })
+  }
 
   render(){
+    console.log(this.props)
+    console.log(this.state)
     if (this.state.sort === "alphabetical"){
       this.props.notes.sort((a,b)=> {
         if (a.title.toLowerCase() < b.title.toLowerCase()){return -1}
@@ -48,13 +56,10 @@ class Sidebar extends Component {
 
     return (
       <div className='master-detail-element sidebar'>
-      sort tasks
-      <div className="custom-select">
-      <select onChange={this.handleChange} className="sort">
-        <option value="created">Date Created</option>
-        <option value="updated">Date Updated</option>
-        <option value="alphabetical">Alphabetical</option>
-      </select>
+      <div className="dropdown">
+      <Menu compact>
+        <Dropdown onChange={this.handleDropDown} text='Sort Tasks' options={this.options} simple item />
+      </Menu>
       </div>
         <NoteList 
         notes={this.props.notes} 

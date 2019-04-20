@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Instructions = () => {
-  return <p className="instructions">Select a note.</p>;
+  return  <div>
+    <p className="instructions">Select your notes to edit them or maybe create one!</p>
+    <img src="thinking.gif"/>
+    <img src="paper.gif" alt="paper"/>
+  </div>
 }
 
 export default Instructions;

@@ -14,7 +14,6 @@ class LoginForm extends React.Component {
     }
     
 	handleSubmit = () => {
-		// console.log("LOGGING IN", this.state)
 		fetch("http://localhost:3000/api/v1/login", {
 			method: "POST",
 			headers: {
