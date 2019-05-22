@@ -31,7 +31,7 @@ class NoteEditor extends Component {
     return (
       <form  onSubmit={this.handleSubmit} className="note-editor">
         <input onChange={this.handleChange} value={this.state.title} type="text" name="title"/>
-        <textarea onChange={this.handleChange} value={this.state.body} name="body" />
+        <textarea onChange={this.handleChange} value={this.state.body} name="body" /> 
         <div className="button-row">
           <input className="button" type="submit" value="Save" />
           <button onClick={this.handleCancel} type="button">Cancel</button>

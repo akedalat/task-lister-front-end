@@ -25,8 +25,9 @@ class SignupForm extends React.Component {
 		})
 		.then(res => res.json())
 		.then((response) => {
-			if (response.error){
-				alert(response.error)
+			
+			if (response.errors){
+				alert(response.errors)
 				
 			} else {
 				this.props.setCurrentUser(response)
@@ -40,7 +41,7 @@ class SignupForm extends React.Component {
 
 	render(){
 		return (
-			<Form onSubmit={this.handleSubmit}>
+			<Form className="Form" onSubmit={this.handleSubmit}>
 		    <Form.Field>
 		      <label>Name</label>
 		      <input onChange={this.handleChange} name="name" value={this.state.name} placeholder='name' />

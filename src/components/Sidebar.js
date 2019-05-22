@@ -39,15 +39,15 @@ class Sidebar extends Component {
       }
       else if (this.state.sort === "created"){
         this.props.notes.sort((a,b)=> {
-          if (a.created_at < b.created_at) {return -1}
-          if (a.created_at > b.created_at) {return 1}
+          if (a.created_at < b.created_at) {return 1}
+          if (a.created_at > b.created_at) {return -1}
           return 0
           })
         }
         else if (this.state.sort === "updated"){
           this.props.notes.sort((a,b)=> {
-            if (a.updated_at < b.updated_at) {return -1}
-            if (a.updated_at > b.updated_at) {return 1}
+            if (a.updated_at < b.updated_at) {return 1}
+            if (a.updated_at > b.updated_at) {return -1}
             return 0
             })
           }
