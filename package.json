@@ -10,7 +10,8 @@
     "react-scripts": "1.1.4",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.86.0",
-    "yarn": "^1.15.2"
+    "webpack-dev-server": "^3.4.1",
+    "yarn": "^1.16.0"
   },
   "scripts": {
     "start": "react-scripts start",
