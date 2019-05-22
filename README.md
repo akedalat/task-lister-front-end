@@ -21,7 +21,7 @@ To run the client side, please follow these instructions:
 ![alt text](https://github.com/akedalat/task-lister-front-end/blob/master/public/wireframe.png)
 
 ## License
-[MIT License](https://github.com/akedalat/moments-desktop-client/blob/master/LICENSE)
+[MIT License](https://github.com/akedalat/task-lister-front-end/blob/master/LICENSE)
 Copyright (c) 2019 [Kian Edalat](https://github.com/akedalat)
 
 
